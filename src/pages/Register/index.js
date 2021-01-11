@@ -1,7 +1,7 @@
 import React from 'react';
 import './register.scss';
 import './register.css';
-import {bg_login, bg_register} from '../../assets/index';
+import {bg_login} from '../../assets/index';
 import {Input,Button, Gap, Link} from '../../components/index';
 import { useHistory } from 'react-router-dom';
 

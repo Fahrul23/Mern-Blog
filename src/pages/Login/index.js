@@ -1,5 +1,5 @@
 import React from 'react';
-import {bg_login, bg_register,bg_login_2} from '../../assets/index';
+import {bg_login_2} from '../../assets/index';
 import {Input,Button, Gap, Link} from '../../components/index';
 import { useHistory } from 'react-router-dom';
 
