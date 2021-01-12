@@ -4,6 +4,7 @@ import { Button,BlogItem,Gap} from '../../components';
 import './home.scss';
 import Axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
+import { setDataBlog } from './../../config/redux/action';
 
 function Home(props) {
 
@@ -11,17 +12,8 @@ function Home(props) {
     const dispatch = useDispatch();
 
     useEffect(() =>{
-
-        Axios.get('http://localhost:4000/v1/blog/posts?page=2&perPage=4')
-        .then(result =>{
-
-            const responseApi =result.data;
-
-            dispatch({type: 'UPDATE_DATA_BLOG',payload : responseApi.data});
-        })
-        .catch(err => console.log(err));
-
-    },[]);
+        dispatch(setDataBlog())
+    },[dispatch]);
 
 
     const history = useHistory();
