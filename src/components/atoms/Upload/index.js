@@ -2,11 +2,11 @@ import React from 'react';
 import { ICFacebook } from '../../../assets';
 import './upload.scss';
 
-function Upload(props) {
+const Upload = ({img,...rest}) => {
     return (
         <div className="upload">
-            <img className="preview" src={ICFacebook} alt="preview"/>
-            <input type="file" />
+        {img && <img className="preview" src={img} alt="preview"/>}
+        <input type="file" {...rest} />
         </div>
     );
 }
