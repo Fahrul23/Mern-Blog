@@ -17,7 +17,6 @@ function CreateBlog() {
 
     const onSubmit=()=>{
         postToApi(form)
-
     }
 
     const onImageUpload =(e) =>{

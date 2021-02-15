@@ -38,6 +38,7 @@ function Home(props) {
                         body={blog.body}
                         name={blog.author.name}
                         date={blog.createdAt}
+                        _id={blog._id}
                         />
                     })
                 }
