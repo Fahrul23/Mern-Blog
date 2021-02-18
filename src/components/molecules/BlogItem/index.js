@@ -5,7 +5,7 @@ import './styleblogitem.css';
 import { useHistory } from 'react-router-dom';
 function BlogItem(props) {
     const history =useHistory();
-    const {image,title,name,date,body,_id} = props;
+    const {image,title,name,date,body,_id,onDelete} = props;
     return (
         <div className="blog-item">
             <img className="image-thumb" src={image} alt=""/>
@@ -14,7 +14,7 @@ function BlogItem(props) {
                     <p className="title">{title}</p>
                     <div className="edit-wrapper">
                         <p className="edit" onClick={()=> history.push(`/create-blog/${_id}`)}>Edit</p>|
-                        <p className="delete">delete</p>
+                        <p className="delete" onClick={() => onDelete(_id)}>delete</p>
                     </div>
                 </div>
                 <p className="author">{name} - {date}</p>

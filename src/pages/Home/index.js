@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button,BlogItem,Gap} from '../../components';
 import './home.scss';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDataBlog } from './../../config/redux/action';
-
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css'; 
 function Home(props) {
     const [counter,setCounter]=useState(1);
     const {dataBlog,page} = useSelector(state => state.homeReducer);
@@ -20,6 +22,32 @@ function Home(props) {
     }
     const next = ()=>{
         setCounter(counter === page.totalPage ? page.totalPage : counter + 1)
+    }
+
+    const confirmDelete = (_id) =>{
+        confirmAlert({
+            title: 'Confirm to delete',
+            message: 'Apakah Anda yakin akan menghapus post ini ? ',
+            buttons: [
+              {
+                label: 'Ya',
+                onClick: () => {
+                    axios.delete(`http://localhost:4000/v1/blog/post/${_id}`)
+                    .then(res => {
+                        console.log('success delete',res.data);
+                        dispatch(setDataBlog(counter))
+                        
+                    })
+                    .catch(e => {console.log(e)})
+                    
+                }
+              },
+              {
+                label: 'Tidak',
+                onClick: () => alert('Click No')
+              }
+            ]
+          });
     }
 
     const history = useHistory();
@@ -39,6 +67,7 @@ function Home(props) {
                         name={blog.author.name}
                         date={blog.createdAt}
                         _id={blog._id}
+                        onDelete={confirmDelete}
                         />
                     })
                 }
