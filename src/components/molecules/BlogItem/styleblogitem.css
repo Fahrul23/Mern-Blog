@@ -1,0 +1,54 @@
+
+
+.edit-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.edit-wrapper .edit{
+    font-weight: bold;
+    color: #03A9F4;
+    cursor: pointer;
+    margin: 0px;
+    margin-right: 14px;
+}
+
+.edit-wrapper .delete{
+    font-weight: bold;
+    color: #E91E63;
+    cursor: pointer;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+/* .content-detail{
+    padding: 16px;
+}
+
+.title-wrapper{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    
+}
+
+.title-wrapper .edit-wrapper{
+    display: flex;
+    align-items: center;
+   
+}
+.edit-wrapper .edit{
+    font-weight: bold;
+    color: #03A9F4;
+    cursor: pointer;
+    margin: 0px;
+    margin-right: 14px;
+}   
+.edit-wrapper .delete{
+    font-weight: bold;
+    margin: 0px;
+    margin-left: 14px;
+    color: #E91E63;
+    cursor: pointer;
+} */
+   

@@ -13,7 +13,7 @@ function MainApp(props) {
              <div className="content-wrapper">
                 <Router>
                     <Switch>
-                        <Route path="/create-blog">
+                        <Route path="/create-blog/:id?">
                             <CreateBlog />
                         </Route>
                         
